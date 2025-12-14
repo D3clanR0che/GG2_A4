@@ -72,4 +72,27 @@ namespace fw
         int y = tileIndex / m_mapSize.x;
         return vec2((float)x, (float)y) * m_tileSize + (m_tileSize * 0.5f);
     }
+
+    TileType Tilemap::getTileTypeAtTilePos(ivec2 tilePos)
+    {
+        if (tilePos.x < 0 || tilePos.x >= m_mapSize.x || tilePos.y < 0 || tilePos.y >= m_mapSize.y)
+            return TileType::Air; // Return Air for out-of-bounds
+        
+        int index = tilePos.y * m_mapSize.x + tilePos.x;
+        return m_map[index];
+    }
+
+    void Tilemap::setTileTypeAtTilePos(ivec2 tilePos, TileType type)
+    {
+        if (tilePos.x < 0 || tilePos.x >= m_mapSize.x || tilePos.y < 0 || tilePos.y >= m_mapSize.y)
+            return;
+        
+        int index = tilePos.y * m_mapSize.x + tilePos.x;
+        m_map[index] = type;
+    }
+
+    ivec2 Tilemap::getTilePosForWorldPos(vec2 worldPos)
+    {
+        return ivec2(int(worldPos.x / m_tileSize.x), int(worldPos.y / m_tileSize.y));
+    }
 }

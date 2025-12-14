@@ -36,6 +36,10 @@ namespace fw
         bool isTileWalkableForWorldPos(vec2 worldPos);
         bool isTileWalkableForTilePos(ivec2 tilePos);
         vec2 getWorldPosForTileIndex(int tileIndex);
+        
+        TileType getTileTypeAtTilePos(ivec2 tilePos);
+        void setTileTypeAtTilePos(ivec2 tilePos, TileType type);
+        ivec2 getTilePosForWorldPos(vec2 worldPos);
 
     protected:
         ivec2 m_mapSize;

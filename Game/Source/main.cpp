@@ -11,9 +11,9 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
     //Game game;
 
-    fw::SurvivorsGame survivorsGame;
+    //fw::SurvivorsGame survivorsGame;
 
-    //PathfindingTestbedGame pathfinderGame;
+    fw::PathfindingTestbedGame pathfinderGame;
 
-    framework.run(&survivorsGame);
+    framework.run(&pathfinderGame);
 }
