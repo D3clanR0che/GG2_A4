@@ -19,6 +19,9 @@ namespace fw
         virtual void onKey(int keyCode, fw::KeyState keyState) override;
 
     private:
+        void movePlayer(ivec2 direction);
+        void handlePlayerMovement(ivec2 targetPos);
+        
         fw::Camera* m_pCamera = nullptr;
 
         std::unordered_map<std::string, fw::Mesh*> m_meshes;
@@ -28,5 +31,10 @@ namespace fw
         Pathfinder* m_pPathfinder;
 
         std::vector<int> m_pathFound;
+        
+        // Player state
+        ivec2 m_playerTilePos = {0, 0};
+        bool m_isSliding = false;
+        ivec2 m_slideDirection = {0, 0};
     };
 }

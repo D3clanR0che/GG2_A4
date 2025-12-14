@@ -10,7 +10,7 @@ namespace fw
 {
     PathfindingTestbedGame::PathfindingTestbedGame()
     {
-        m_pBasicShader = new fw::ShaderProgram("Data/Basics/basic.vert", "Data/Basics/basic.frag");
+        m_pBasicShader = new fw::ShaderProgram("Data/Shaders/Basic.vert", "Data/Shaders/Basic.frag");
 
         // Create meshes.
         m_meshes["tile"] = new fw::Mesh(GL_TRIANGLE_STRIP, { {{0,0}}, {{1,0}}, {{0,1}}, {{1,1}} });
@@ -42,9 +42,14 @@ namespace fw
         {
             for (int x = 0; x < 10; x++)
             {
-                if (rand() % 3 == 0)
+                int randValue = rand() % 5;
+                if (randValue == 0)
                 {
                     layout[y * 10 + x] = TileType::Wall;
+                }
+                else if (randValue == 1)
+                {
+                    layout[y * 10 + x] = TileType::Void;
                 }
                 else
                 {
@@ -56,17 +61,44 @@ namespace fw
         m_pTilemap = new Tilemap(m_meshes["tile"], m_pBasicShader, { 10,10 }, { 5.0f,5.0f }, layout);
         m_pPathfinder = new Pathfinder(m_pTilemap);
         delete[] layout;
+        
+        // Initialize player position at a ground tile
+        m_playerTilePos = {1, 1};
+        m_isSliding = false;
+        m_slideDirection = {0, 0};
     }
 
     void PathfindingTestbedGame::update(float deltaTime)
     {
-        int startx = 3;
-        int starty = 1;
-        int endx = 0;
-        int endy = 6;
-        bool found = m_pPathfinder->findPath(startx, starty, endx, endy);
-
-        m_pathFound = m_pPathfinder->getPath(endx, endy);
+        // Handle sliding on void tiles
+        if (m_isSliding)
+        {
+            ivec2 nextPos = m_playerTilePos + m_slideDirection;
+            TileType nextTileType = m_pTilemap->getTileTypeAtTilePos(nextPos);
+            
+            // Continue sliding on void tiles
+            if (nextTileType == TileType::Void)
+            {
+                m_playerTilePos = nextPos;
+            }
+            else
+            {
+                // Stop sliding when we hit a non-void tile
+                m_isSliding = false;
+                
+                // If we hit a wall, convert it to void
+                if (nextTileType == TileType::Wall)
+                {
+                    m_pTilemap->setTileTypeAtTilePos(nextPos, TileType::Void);
+                    m_playerTilePos = nextPos; // Move onto the converted tile
+                }
+                else if (nextTileType == TileType::Ground)
+                {
+                    m_playerTilePos = nextPos; // Move onto the ground tile
+                }
+                // If Air or out of bounds, stay at current position
+            }
+        }
     }
 
     void PathfindingTestbedGame::draw()
@@ -77,19 +109,76 @@ namespace fw
 
         m_pTilemap->draw(m_pCamera);
 
-        for (int i = 0; i < m_pathFound.size(); i++)
-        {
-            int tileIndex = m_pathFound[i];
-            vec2 pos = m_pTilemap->getWorldPosForTileIndex(tileIndex);
-            m_meshes["dot"]->draw(m_pCamera, m_pBasicShader, 1, 0, pos, Red());
-        }
+        // Draw the player
+        vec2 playerWorldPos = vec2((float)m_playerTilePos.x, (float)m_playerTilePos.y) * m_pTilemap->getTileSize() + (m_pTilemap->getTileSize() * 0.5f);
+        m_meshes["dot"]->draw(m_pCamera, m_pBasicShader, 1, 0, playerWorldPos, Yellow());
     }
 
     void PathfindingTestbedGame::onKey(int keyCode, fw::KeyState keyState)
     {
-        if (keyState == fw::KeyState::Pressed && keyCode == 'R')
+        if (keyState == fw::KeyState::Pressed)
         {
-            reset();
+            if (keyCode == 'R')
+            {
+                reset();
+            }
+            else if (!m_isSliding) // Only allow movement if not currently sliding
+            {
+                ivec2 direction = {0, 0};
+                
+                if (keyCode == VK_UP)
+                {
+                    direction = {0, 1};
+                }
+                else if (keyCode == VK_DOWN)
+                {
+                    direction = {0, -1};
+                }
+                else if (keyCode == VK_LEFT)
+                {
+                    direction = {-1, 0};
+                }
+                else if (keyCode == VK_RIGHT)
+                {
+                    direction = {1, 0};
+                }
+                
+                if (direction.x != 0 || direction.y != 0)
+                {
+                    movePlayer(direction);
+                }
+            }
         }
+    }
+
+    void PathfindingTestbedGame::movePlayer(ivec2 direction)
+    {
+        ivec2 targetPos = m_playerTilePos + direction;
+        TileType targetTileType = m_pTilemap->getTileTypeAtTilePos(targetPos);
+        
+        if (targetTileType == TileType::Ground)
+        {
+            // Simply move to ground tile
+            m_playerTilePos = targetPos;
+        }
+        else if (targetTileType == TileType::Wall)
+        {
+            // Convert wall to void and move onto it
+            m_pTilemap->setTileTypeAtTilePos(targetPos, TileType::Void);
+            m_playerTilePos = targetPos;
+        }
+        else if (targetTileType == TileType::Void)
+        {
+            // Start sliding on void tile
+            m_playerTilePos = targetPos;
+            m_isSliding = true;
+            m_slideDirection = direction; // Continue in the same direction as the initial movement
+        }
+        // If Air or out of bounds, don't move
+    }
+
+    void PathfindingTestbedGame::handlePlayerMovement(ivec2 targetPos)
+    {
+        // This method is no longer needed, but keeping for now
     }
 }
