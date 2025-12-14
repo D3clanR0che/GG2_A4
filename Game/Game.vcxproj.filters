@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{752151e8-9865-46ec-8a11-12eb10f71741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{4f894437-e840-4295-9a65-916df6677710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\Shaders">
+      <UniqueIdentifier>{53995ee7-dc2b-423f-ae34-6e581a55bbeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Survivors">
+      <UniqueIdentifier>{57c64401-e480-47d7-bd39-b7c9bc2cad74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PathfindingTestbed">
+      <UniqueIdentifier>{aab83e7a-46c1-4c0a-b572-93e4d13dd260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\Textures">
+      <UniqueIdentifier>{1f5ed397-b519-4fca-8a32-704c6a0d4cf5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\Enemy.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\MathFuncs.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\Pickup.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\Player.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\Tween.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PathfindingTestbed\Pathfinder.cpp">
+      <Filter>Source\PathfindingTestbed</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PathfindingTestbed\Tilemap.cpp">
+      <Filter>Source\PathfindingTestbed</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PathfindingTestbed\PathfindingTestbedGame.cpp">
+      <Filter>Source\PathfindingTestbed</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\SurvivorsGameObject.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\Bat.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\ProgressBar.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\Slime.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\SurvivorsGame.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AnimatedObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\WorldMap.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Survivors\SurvivorsCamera.cpp">
+      <Filter>Source\Survivors</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Data\Shaders\Basic.frag">
+      <Filter>Data\Shaders</Filter>
+    </None>
+    <None Include="..\Data\Shaders\Basic.vert">
+      <Filter>Data\Shaders</Filter>
+    </None>
+    <None Include="..\Data\Shaders\Texture.frag">
+      <Filter>Data\Shaders</Filter>
+    </None>
+    <None Include="..\Data\Textures\Zelda.json">
+      <Filter>Data\Textures</Filter>
+    </None>
+    <None Include="..\Data\Textures\Sokoban.json">
+      <Filter>Data\Textures</Filter>
+    </None>
+    <None Include="..\Data\Textures\DungeonCrawler.json">
+      <Filter>Data\Textures</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Survivors\Enemy.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\MathFuncs.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\Pickup.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\Player.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\Tween.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObject.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameTypes.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PathfindingTestbed\Pathfinder.h">
+      <Filter>Source\PathfindingTestbed</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PathfindingTestbed\Tilemap.h">
+      <Filter>Source\PathfindingTestbed</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PathfindingTestbed\PathfindingTestbedGame.h">
+      <Filter>Source\PathfindingTestbed</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\SurvivorsGameObject.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\Bat.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\ProgressBar.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\Slime.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\SurvivorsGame.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AnimatedObject.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\Types.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Survivors\WorldMap.h">
+      <Filter>Source\Survivors</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Data\Textures\Zelda.png">
+      <Filter>Data\Textures</Filter>
+    </Image>
+    <Image Include="..\Data\Textures\Sokoban.png">
+      <Filter>Data\Textures</Filter>
+    </Image>
+    <Image Include="..\Data\Textures\DungeonCrawler.png">
+      <Filter>Data\Textures</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

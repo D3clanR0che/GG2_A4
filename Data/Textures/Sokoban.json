@@ -1,0 +1,54 @@
+{
+	"spritetool":	3,
+	"filename":	"Sokoban.png",
+	"size":	[1024, 512],
+	"sprites":	[{
+			"name":	"player_down1",
+			"pos":	[0, 384],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_down2",
+			"pos":	[0, 255],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_down3",
+			"pos":	[129, 384],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_left1",
+			"pos":	[0, 126],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_left2",
+			"pos":	[129, 255],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_left3",
+			"pos":	[258, 384],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_right1",
+			"pos":	[129, 126],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_right2",
+			"pos":	[258, 255],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_right3",
+			"pos":	[387, 384],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_up1",
+			"pos":	[258, 126],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_up2",
+			"pos":	[387, 255],
+			"size":	[128, 128]
+		}, {
+			"name":	"player_up3",
+			"pos":	[516, 384],
+			"size":	[128, 128]
+		}]
+}

@@ -1,0 +1,118 @@
+{
+	"spritetool":	3,
+	"filename":	"DungeonCrawler.png",
+	"size":	[128, 128],
+	"sprites":	[{
+			"name":	"fly_anim_f0",
+			"pos":	[0, 112],
+			"size":	[16, 16]
+		}, {
+			"name":	"fly_anim_f1",
+			"pos":	[0, 95],
+			"size":	[16, 16]
+		}, {
+			"name":	"fly_anim_f2",
+			"pos":	[17, 112],
+			"size":	[16, 16]
+		}, {
+			"name":	"fly_anim_f3",
+			"pos":	[0, 78],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_idle_anim_f0",
+			"pos":	[17, 95],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_idle_anim_f1",
+			"pos":	[34, 112],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_idle_anim_f2",
+			"pos":	[0, 61],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_idle_anim_f3",
+			"pos":	[17, 78],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_idle_anim_f4",
+			"pos":	[34, 95],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_idle_anim_f5",
+			"pos":	[51, 112],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_run_anim_f0",
+			"pos":	[0, 44],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_run_anim_f1",
+			"pos":	[17, 61],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_run_anim_f2",
+			"pos":	[34, 78],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_run_anim_f3",
+			"pos":	[51, 95],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_run_anim_f4",
+			"pos":	[68, 112],
+			"size":	[16, 16]
+		}, {
+			"name":	"knight_run_anim_f5",
+			"pos":	[0, 27],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_idle_anim_f0",
+			"pos":	[17, 44],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_idle_anim_f1",
+			"pos":	[34, 61],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_idle_anim_f2",
+			"pos":	[51, 78],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_idle_anim_f3",
+			"pos":	[68, 95],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_idle_anim_f4",
+			"pos":	[85, 112],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_idle_anim_f5",
+			"pos":	[0, 10],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_run_anim_f0",
+			"pos":	[17, 27],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_run_anim_f1",
+			"pos":	[34, 44],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_run_anim_f2",
+			"pos":	[51, 61],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_run_anim_f3",
+			"pos":	[68, 78],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_run_anim_f4",
+			"pos":	[85, 95],
+			"size":	[16, 16]
+		}, {
+			"name":	"slime_run_anim_f5",
+			"pos":	[102, 112],
+			"size":	[16, 16]
+		}]
+}
